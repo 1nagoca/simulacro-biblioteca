@@ -21,9 +21,7 @@ Dos microservicios en Spring Boot, cada uno con su propia base de datos H2: **Li
 
 ### 1. ¿Por qué Préstamos tiene su propio record del libro en lugar de usar la entidad Libro?
 
-Porque en microservicios cada servicio es independiente. Si Préstamos usara directamente la entidad Libro del otro servicio, estarían acoplados: cualquier cambio en Libros rompería Préstamos. Con un LibroDTO propio, Préstamos solo modela los datos que a él le interesan y si Libros cambia internamente, a Préstamos no le afecta gracias al @JsonIgnoreProperties(ignoreUnknown = true).
-
-Porque en microservicios cada servicio es independiente. Si Préstamos usara directamente la entidad Libro del otro servicio, estarían acoplados: cualquier cambio en Libros (agregar un campo, renombrar algo) rompería Préstamos. Con un LibroDTO propio, Préstamos solo modela los datos que a él le interesan (id, titulo, ejemplaresDisponibles) y si Libros cambia internamente, a Préstamos no le afecta gracias al @JsonIgnoreProperties(ignoreUnknown = true).
+Porque en microservicios cada servicio es independiente. Si Préstamos usara directamente la entidad Libro del otro servicio, estarían acoplados: cualquier cambio en Libros rompería Préstamos. Con un LibroDTO propio, Préstamos solo modela los datos que a él le interesan y si Libros cambia internamente, a Préstamos no le afecta.
 
 ### 2. ¿Por qué el préstamo guarda una copia del título si Libros ya lo tiene?
 
