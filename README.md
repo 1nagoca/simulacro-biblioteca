@@ -17,3 +17,14 @@ Dos microservicios en Spring Boot, cada uno con su propia base de datos H2: **Li
 ### Libros apagado: Préstamos responde 503
 ![Prueba 503](imagenes/prueba-503.png)
 
+## Preguntas de la defensa
+
+### 1. ¿Por qué Préstamos tiene su propio record del libro en lugar de usar la entidad Libro?
+
+### 2. ¿Por qué el préstamo guarda una copia del título si Libros ya lo tiene?
+
+### 3. ¿Por qué el libro inexistente responde 400 en Préstamos y no 404?
+
+### 4. ¿Qué cambia en la dirección de Libros cuando todo corre en Docker? ¿Por qué no hubo que tocar Java?
+
+### 5. Préstamos no descuenta ejemplares. ¿Qué servicio debería hacerlo y qué pasa si falla justo después de guardar el préstamo?
